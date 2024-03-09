@@ -1,22 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consumer Visualization Design</title>
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <!-- Link to external CSS file -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consumer Visualization Design</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="container">
+    <h1>Most Popular Restaurants in Boston</h1>
+    <p id="description">This map uses number of reviews to identify the locations of the most popular restaurants in Boston and what type of food they serve</p>
     <div id="visualization">
+      <div id="reviews-filter">
+        <h2>Reviews Filter</h2>
+        <div id="reviews-histogram"></div>
+        <input type="range" id="reviews-slider" min="0" max="1000" value="0">
+        <label for="reviews-slider">Number of Reviews:</label>
+        <div id="legend" style="padding: 20px;">
+            <h3>Restaurant Categories</h3>
+            <div id="legend-items"></div>
+        </div>
         
+      </div>
     </div>
-    
-    <!-- Script-->
-    <script>
-
-      
-    </script>
+    <div id="map"></div>
+  </div>
+  
+  <script src="script.js"></script>
 </body>
 </html>

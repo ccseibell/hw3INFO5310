@@ -1,24 +1,80 @@
-/* margin and padding */
+/* Resetting margin, padding, and box sizing to ensure consistency across browsers */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Basic styling for the body. Commented out properties can be adjusted as needed */
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    margin: 20px;
+    /* margin: 20px; */
 }
 
-#visualization {
-    margin: 20px auto;
+/* Container for both #map and #visualization ensuring they're in a flex layout */
+.container {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to the next line on smaller screens */
+    justify-content: space-around; /* Evenly spaces the children, with space around them */
     width: 90%;
     max-width: 1200px;
-    min-height: 600px;
-    border: 1px solid #ccc;
-    position: relative;
+    margin: 0 auto; /* Centers the container */
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
+/* Shared styling for #map and #visualization to ensure they look identical */
+#visualization, #map {
+    flex: 1; /* Allows both divs to grow and take up equal space */
+    min-width: 250px; /* Minimum width before they wrap, can adjust based on design needs */
+    margin: 10px; /* Adjusted for side-by-side layout */
+    min-height: 600px; /* Ensures a minimum height */
+    border: 1px solid #ccc; /* Adds a border */
+    position: relative;
+    padding: 20px; /* Padding inside each box */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Shadow effect */
+    overflow: hidden; /* Hides any overflow, important for the map SVG */
+}
+
+/* Ensures SVGs within both divs are displayed correctly */
+#visualization svg, #map svg {
+    display: block;
+    width: 100%;
+    height: auto; /* Adjusts height automatically to maintain aspect ratio */
+}
+
+/* Styling for headings and descriptive text */
+h1 {
+    color: #333;
+    font-size: 24px;
+    margin: 20px 0; /* Adds margin to the top and bottom */
+    text-align: center;
+}
+
+#description {
+    color: #666;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 20px; /* Adds space below the description */
+}
+#reviews-count {
+    font-size: 20px; /* Makes the text larger */
+    text-align: center; /* Centers the text below the slider */
+    margin-top: 10px; /* Adds some space between the slider and the text */
+  }
+
+  #legend {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: auto;
+    max-width: 250px;
+}
+#legend h3 {
+    margin: 0;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border-bottom: 1px solid #ccc;
+}
+#legend-items div {
+    padding: 5px 10px;
+}
